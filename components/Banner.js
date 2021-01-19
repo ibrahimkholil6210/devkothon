@@ -1,20 +1,26 @@
 import styled from "styled-components";
 import Container from "./utils/Container";
 import FlexContainer from "./utils/FlexContainer";
+import EditorLayout from "./EditorLayout";
 
-const StyldeBannerContainer = styled.div`
+const StyldeBannerLeftContainer = styled.div`
   padding: 100px 0;
   display: flex;
   justify-content: center;
-  flex: 1;
+  width: 30%;
   flex-wrap: wrap;
 `;
 
+const StyldeBanneRightContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex: 1;
+`;
+
 const StylderHeader = styled.div`
-  font-size: 65px;
-  font-weight: 800;
+  font-size: 38px;
+  font-weight: ${(props) => props.theme.linkSize.lg.fWeight};
   text-transform: uppercase;
-  text-align: justify;
   @media screen and (max-width: 768px) {
     font-size: 30px;
     font-weight: 700;
@@ -29,15 +35,16 @@ const Banner = (props) => {
   return (
     <Container>
       <FlexContainer>
-        <StyldeBannerContainer>
-          <StylderHeader>'প্রাচ্যবাদ' একটি বড় ডিসিপ্লিন</StylderHeader>
+        <StyldeBannerLeftContainer>
+          <StylderHeader>বাংলা কম্পিউটার সাইন্স তথ্য কোষ</StylderHeader>
           <p>
-            'প্রাচ্যবাদ' একটি বড় ডিসিপ্লিন। এই ডিসিপ্লিনের অধীনে প্রাচ্যের অধীবাসিদের আমাদের বিশ্বাস, ইতিহাস, সমাজ, সাহিত্য, সভ্যতা মূল্যবোধের
-            সমালোচনা-পর্যালোচনা করা হচ্ছে গত ১০০০ বছর। কিন্তু পাশ্চাত্যের চিন্তা, দর্শন, ইতিহাসকে সেভাবে পর্যালোচনা করা হয়নি। ফলে একপেশে প্রচারণায়
-            সেগুলোকে মানবিক বিকাশের সর্বচ্চো স্তর বলে অনেকেই মনে করেন। কিন্তু আমরা মনে করি সঠিক সিদ্ধান্তে উপনীত হবার পূর্বে পাশ্চাত্যে সভ্যতা ও
-            দর্শনের পূর্ন ও যথার্থ পর্যালোচনা হওয়া উচিৎ।
+            ডেভকথন একটি কম্পিউটার সাইন্সের তথ্য কোষ। কম্পিউটার সাইন্স একটি বিশাল ডিসিপ্লিন। আমাদের চেষ্টা থাকবে বিষয় ভিত্তিক টিউটোরিয়াল এবং প্রতিদিনের
+            যত কাজের যত ভাল খারাপ অভিজ্ঞতা সবার মাঝে ছড়িয়ে।
           </p>
-        </StyldeBannerContainer>
+        </StyldeBannerLeftContainer>
+        <StyldeBanneRightContainer>
+          <EditorLayout />
+        </StyldeBanneRightContainer>
       </FlexContainer>
     </Container>
   );

@@ -26,6 +26,14 @@ const theme = {
       fWeight: 600,
     },
   },
+  editorColor: {
+    bgTop: "#15202b",
+    fColor: "#ffffff",
+    bgOff: "#123d43",
+    borderColor: "#000",
+    codeArea: "#11464e",
+    fileNamebg: "#0f3237",
+  },
 };
 
 export default function App({ Component, pageProps }) {
