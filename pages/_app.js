@@ -1,4 +1,7 @@
 import { createGlobalStyle, ThemeProvider } from "styled-components";
+import { ApolloProvider } from "@apollo/client";
+import { useApollo } from "../lib/apolloClient";
+import "../assets/css/syntaxHighlight.css";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -33,16 +36,20 @@ const theme = {
     borderColor: "#000",
     codeArea: "#11464e",
     fileNamebg: "#0f3237",
+    fSize: "14px",
   },
 };
 
 export default function App({ Component, pageProps }) {
+  const apolloClient = useApollo(pageProps.initialApolloState);
   return (
     <>
       <GlobalStyle />
-      <ThemeProvider theme={theme}>
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <ApolloProvider client={apolloClient}>
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </ApolloProvider>
     </>
   );
 }

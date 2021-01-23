@@ -81,6 +81,12 @@ const Nav = (props) => {
                     আর্টিকেলস
                   </StyledLink>
                 </StyleList>
+                <StyleList>
+                  <StyledLink href='/series'>
+                    <FiPenTool />
+                    সিরিজ
+                  </StyledLink>
+                </StyleList>
                 <StyleList onClick={(e) => setSearchToggle(true)}>
                   <FiSearch />
                   সার্চ

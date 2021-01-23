@@ -7,6 +7,8 @@ const StyledEditorWrapper = styled.div`
   justify-content: center;
   margin-top: 15px;
   flex-wrap: wrap;
+  transform: rotate3d(0.5, -0.866, 0, 15deg) rotate(-1deg);
+  box-shadow: 0 27.5px 40px -17.5px rgba(0, 0, 0, 0.4), 46.2px 37.5px 40px -17.5px rgba(0, 0, 0, 0.4);
 `;
 
 const StyledEditorTop = styled.div`
@@ -40,6 +42,7 @@ const StyledDot = styled.div`
   width: 15px;
   border-radius: 50%;
   margin: 5px;
+  cursor: pointer;
 `;
 
 const StyledEditorTitle = styled.div`
@@ -66,7 +69,7 @@ const StyledEditorMenuUL = styled.ul`
 
 const StyledList = styled.li`
   color: ${(props) => props.theme.editorColor.fColor};
-  font-size: 13px;
+  font-size: ${(props) => props.theme.editorColor.fSize};
   margin-right: 8px;
   cursor: pointer;
   font-weight: 400;
@@ -75,7 +78,7 @@ const StyledList = styled.li`
 const StyledEditorMainWrapper = styled.div`
   display: flex;
   flex: 1;
-  height: 250px;
+  height: 340px;
 `;
 
 const StyledWrapperLeftExplorer = styled.div`
@@ -115,10 +118,10 @@ const StyledFileExplorer = styled.div`
 const StyledExplorerBadge = styled.h3`
   text-transform: uppercase;
   font-weight: 300;
-  font-size: 10px;
+  font-size: ${(props) => props.theme.editorColor.fSize};
   color: ${(props) => props.theme.editorColor.fColor};
   padding: 0;
-  margin: 5px 0 0 5px;
+  margin: 5px 0 5px 5px;
 `;
 
 const StyledEditorProjectName = styled.div`
@@ -126,7 +129,7 @@ const StyledEditorProjectName = styled.div`
   color: ${(props) => props.theme.editorColor.fColor};
   display: flex;
   align-items: center;
-  font-size: 10px;
+  font-size: ${(props) => props.theme.editorColor.fSize};
   font-weight: 700;
 `;
 
@@ -157,7 +160,7 @@ const StyledEditorText = styled.div`
 const StyledEditorFileName = styled.div`
   color: ${(props) => props.theme.editorColor.fColor};
   background-color: ${(props) => props.theme.editorColor.fileNamebg};
-  font-size: 13px;
+  font-size: ${(props) => props.theme.editorColor.fSize};
   padding-left: 5px;
 
   & > span {
@@ -176,9 +179,10 @@ const StyledEditorFileName = styled.div`
 `;
 
 const StyledEditorSpace = styled.div`
-  font-size: 14px;
+  font-size: ${(props) => props.theme.editorColor.fSize};
   padding: 0 5px;
   color: ${(props) => props.theme.editorColor.fColor};
+  font-weight: 600;
 
   & > span:nth-child(1) {
     color: #e5c07b;
@@ -252,18 +256,19 @@ const EditorLayout = (props) => {
             </StyledEditorProjectName>
             <StyledFileNameUL>
               <StyledFileList>
-                <FiFolder />
+                <StyledIcon url='https://codesandbox.io/static/media/folder.31ca7ee0.svg' />
                 pages
               </StyledFileList>
               <StyledFileList>
-                <FiFolder />
+                <StyledIcon url='https://codesandbox.io/static/media/folder.31ca7ee0.svg' />
                 node_modules
               </StyledFileList>
               <StyledFileList>
-                <FiFolder />
+                <StyledIcon url='https://codesandbox.io/static/media/folder.31ca7ee0.svg' />
                 components
               </StyledFileList>
               <StyledFileList>
+                <StyledIcon url='https://cdn.jsdelivr.net/gh/PKief/vscode-material-icon-theme@master/icons/git.svg' />
                 <FiGitPullRequest />
                 .gitignore
               </StyledFileList>
@@ -280,6 +285,10 @@ const EditorLayout = (props) => {
                 README.md
               </StyledFileList>
             </StyledFileNameUL>
+            <StyledEditorProjectName>
+              <FiChevronRight />
+              NPM SCRIPTS
+            </StyledEditorProjectName>
           </StyledFileExplorer>
           <StyledEditorText>
             <StyledEditorFileName>
@@ -288,7 +297,7 @@ const EditorLayout = (props) => {
               </span>
             </StyledEditorFileName>
             <StyledEditorSpace>
-              <span>console</span>.<span>log</span>(<span>"Hello World"</span>)
+              <span>console</span>.<span>log</span>(<span>"Hello World"</span>);
             </StyledEditorSpace>
           </StyledEditorText>
         </StyledEditorMainWrapper>

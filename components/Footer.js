@@ -52,29 +52,27 @@ const Footer = (props) => {
         <FooterGrid>
           <Logo />
           <ParaStyled>
-            'প্রাচ্যবাদ' একটি বড় ডিসিপ্লিন। এই ডিসিপ্লিনের অধীনে প্রাচ্যের অধীবাসিদের আমাদের বিশ্বাস, ইতিহাস, সমাজ, সাহিত্য, সভ্যতা মূল্যবোধের
-            সমালোচনা-পর্যালোচনা করা হচ্ছে গত ১০০০ বছর। কিন্তু পাশ্চাত্যের চিন্তা, দর্শন, ইতিহাসকে সেভাবে পর্যালোচনা করা হয়নি। ফলে একপেশে প্রচারণায়
-            সেগুলোকে মানবিক বিকাশের সর্বচ্চো স্তর বলে অনেকেই মনে করেন। কিন্তু আমরা মনে করি সঠিক সিদ্ধান্তে উপনীত হবার পূর্বে পাশ্চাত্যে সভ্যতা ও
-            দর্শনের পূর্ন ও যথার্থ পর্যালোচনা হওয়া উচিৎ।
+            ডেভকথন একটি কম্পিউটার সাইন্সের তথ্য কোষ। কম্পিউটার সাইন্স একটি বিশাল ডিসিপ্লিন। আমাদের চেষ্টা থাকবে বিষয় ভিত্তিক টিউটোরিয়াল এবং প্রতিদিনের
+            যত কাজের যত ভাল খারাপ অভিজ্ঞতা সবার মাঝে ছড়িয়ে দেয়া।
           </ParaStyled>
-          <p>Copyright &copy; 2021 পাশ্চাত্যবাদ</p>
+          <p>Copyright &copy; 2021 ডেভকথন</p>
         </FooterGrid>
         <FooterGrid>
           <FooterGridTitleStyled>কমিউনিটি</FooterGridTitleStyled>
           <ULStyled>
             <LiStyled>
-              <a target='_blank' href='https://www.alkawsar.com/bn/'>
-                আলকাউসার
+              <a target='_blank' href='https://js.zonayed.me/'>
+                হাতে কলমে জাভাস্ক্রিপ্ট
               </a>
             </LiStyled>
             <LiStyled>
-              <a target='_blank' href='http://assunnahtrust.com/'>
-                আসসুন্নাহ ট্রাস্ট
+              <a target='_blank' href='https://devsonket.com/'>
+                ডেভসংকেত
               </a>
             </LiStyled>
             <LiStyled>
-              <a target='_blank' href='https://ahlehaqmedia.com/'>
-                আহলে হক বাংলা মিডিয়া
+              <a target='_blank' href='https://techdiary.dev/'>
+                টেকডাইরি
               </a>
             </LiStyled>
           </ULStyled>
@@ -82,7 +80,7 @@ const Footer = (props) => {
         <FooterGrid>
           <FooterGridTitleStyled>যোগাযোগ</FooterGridTitleStyled>
           <ParaStyled>যেকোন প্রয়োজনে আমাদের কে ই-মেইল করুন বা স্পন্সরশীপের জন্য যোগাযোগ করুন</ParaStyled>
-          <MailStyled href='mailto:contact@occidentalism.com'>contact@OCCIDENTALISM.com</MailStyled>
+          <MailStyled href='mailto:contact@devkothon.com'>contact@devkothon.com</MailStyled>
         </FooterGrid>
       </FlexContainer>
     </Container>

@@ -69,8 +69,8 @@ const HeroDetails = (props) => {
         <FlexContainer alignment={true}>
           <HeroContentLeftStyled>
             <ContentTopStyled>
-              <p>ইতিহাস</p>
-              <h2>হার্স্ট বনাম পুলিৎজার: সাংবাদিকতার হলুদ অধ্যায়</h2>
+              <p>{props.serial ? props.serial.title : "ইতিহাস"}</p>
+              <h2>{props.pageData.title}</h2>
             </ContentTopStyled>
             <FlexContainer justify='left' alignment={true}>
               <AuthorImgContainerStyled>

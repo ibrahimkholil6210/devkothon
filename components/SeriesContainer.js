@@ -2,23 +2,27 @@ import styled from "styled-components";
 import Container from "./utils/Container";
 import FlexContainer from "./utils/FlexContainer";
 import Card from "./Card";
+import Imgbg from "../assets/img/dark-bg.jpg";
 
 const ArticleContainerStyled = styled.div`
   background-color: #f9f9f9;
   padding: 25px 0;
-  margin: 50px 0 0 0;
+  margin: 0px 0 50px 0;
+  color: ${(props) => props.theme.colors.invert};
+  background-image: url(${Imgbg});
+  background-size: cover;
 `;
 
 const StyledTitle = styled.h1``;
 
-const ArticleContainer = (props) => {
+const SeriesContainer = ({ serials, post }) => {
   return (
     <ArticleContainerStyled>
       <Container>
-        <StyledTitle>আর্টিকেল সূমহ</StyledTitle>
+        <StyledTitle>সিরিজ সূমহ</StyledTitle>
         <FlexContainer>
-          {props.articles.map((item, index) => {
-            return <Card item={item} key={index} />;
+          {serials.map((item, index) => {
+            return <Card item={item} key={index} series post={post} />;
           })}
         </FlexContainer>
       </Container>
@@ -26,4 +30,4 @@ const ArticleContainer = (props) => {
   );
 };
 
-export default ArticleContainer;
+export default SeriesContainer;

@@ -63,24 +63,47 @@ const Card = (props) => {
   const handleClick = (e) => {
     e.preventDefault();
   };
+
+  const navigationLink = (itemDef) => {
+    let navLink = null;
+    if (itemDef.series && itemDef.post) {
+      navLink = "/post/" + itemDef.item.id;
+    } else if (itemDef.series) {
+      navLink = "/series/" + itemDef.item.id;
+    } else {
+      navLink = "/article/" + itemDef.item.id;
+    }
+    return navLink;
+  };
+
   return (
     <CardStyled>
-      <Link href={"/article/" + props.item.slug}>
+      <Link href={navigationLink(props)}>
         <LinkStyled>
           <CardImgStyled>
-            <ImgStyled src={props.item.mainImg} alt={props.item.mainImg} />
+            <ImgStyled
+              src={
+                props.item.mainImg ||
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/512px-Unofficial_JavaScript_logo_2.svg.png"
+              }
+              alt={props.item.mainImg}
+            />
           </CardImgStyled>
           <CardDescStyled>
             <CardPreData>
-              <div>{props.item.category}</div>
-              <div onClick={handleClick}>
-                <img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE1IDE4Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggc3Ryb2tlPSIjMDAwIiBkPSJNLjUgMTMuN2w3IDMuNzMzIDctMy43MzNWM0EyLjUgMi41IDAgMCAwIDEyIC41SDNBMi41IDIuNSAwIDAgMCAuNSAzdjEwLjd6Ii8+CiAgICAgICAgPHBhdGggZmlsbD0iIzAwMCIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNNi45IDEyLjFWOC42OTVIMy41VjcuNTAxaDMuNHYtMy40aDEuMTk1djMuNEgxMS41djEuMTk0SDguMDk1VjEyLjF6Ii8+CiAgICA8L2c+Cjwvc3ZnPgo=' />
-              </div>
+              <div>{props.item.category || "ইতিহাস"}</div>
+              {props.series ? null : (
+                <>
+                  <div onClick={handleClick}>
+                    <img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE1IDE4Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggc3Ryb2tlPSIjMDAwIiBkPSJNLjUgMTMuN2w3IDMuNzMzIDctMy43MzNWM0EyLjUgMi41IDAgMCAwIDEyIC41SDNBMi41IDIuNSAwIDAgMCAuNSAzdjEwLjd6Ii8+CiAgICAgICAgPHBhdGggZmlsbD0iIzAwMCIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNNi45IDEyLjFWOC42OTVIMy41VjcuNTAxaDMuNHYtMy40aDEuMTk1djMuNEgxMS41djEuMTk0SDguMDk1VjEyLjF6Ii8+CiAgICA8L2c+Cjwvc3ZnPgo=' />
+                  </div>
+                </>
+              )}
             </CardPreData>
             <TitleStyled>{props.item.title}</TitleStyled>
           </CardDescStyled>
           <CardBottomStyled>
-            <div>{props.item.date}</div>
+            <div>21 Jan 2021</div>
             <div>•</div>
             <div>1722 বার পড়া হয়েছে</div>
           </CardBottomStyled>

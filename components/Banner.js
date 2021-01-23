@@ -3,8 +3,15 @@ import Container from "./utils/Container";
 import FlexContainer from "./utils/FlexContainer";
 import EditorLayout from "./EditorLayout";
 
+const StyledBannerWrapper = styled.div`
+  min-height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+`;
+
 const StyldeBannerLeftContainer = styled.div`
-  padding: 100px 0;
   display: flex;
   justify-content: center;
   width: 30%;
@@ -15,6 +22,7 @@ const StyldeBanneRightContainer = styled.div`
   display: flex;
   justify-content: center;
   flex: 1;
+  perspective: 500px;
 `;
 
 const StylderHeader = styled.div`
@@ -31,21 +39,23 @@ const StylderHeader = styled.div`
   }
 `;
 
-const Banner = (props) => {
+const Banner = () => {
   return (
     <Container>
-      <FlexContainer>
-        <StyldeBannerLeftContainer>
-          <StylderHeader>বাংলা কম্পিউটার সাইন্স তথ্য কোষ</StylderHeader>
-          <p>
-            ডেভকথন একটি কম্পিউটার সাইন্সের তথ্য কোষ। কম্পিউটার সাইন্স একটি বিশাল ডিসিপ্লিন। আমাদের চেষ্টা থাকবে বিষয় ভিত্তিক টিউটোরিয়াল এবং প্রতিদিনের
-            যত কাজের যত ভাল খারাপ অভিজ্ঞতা সবার মাঝে ছড়িয়ে।
-          </p>
-        </StyldeBannerLeftContainer>
-        <StyldeBanneRightContainer>
-          <EditorLayout />
-        </StyldeBanneRightContainer>
-      </FlexContainer>
+      <StyledBannerWrapper>
+        <FlexContainer alignment>
+          <StyldeBannerLeftContainer>
+            <StylderHeader>বাংলা কম্পিউটার সাইন্স তথ্য কোষ</StylderHeader>
+            <p>
+              ডেভকথন একটি কম্পিউটার সাইন্সের তথ্য কোষ। কম্পিউটার সাইন্স একটি বিশাল ডিসিপ্লিন। আমাদের চেষ্টা থাকবে বিষয় ভিত্তিক টিউটোরিয়াল এবং
+              প্রতিদিনের যত কাজের যত ভাল খারাপ অভিজ্ঞতা সবার মাঝে ছড়িয়ে দেয়া।
+            </p>
+          </StyldeBannerLeftContainer>
+          <StyldeBanneRightContainer>
+            <EditorLayout />
+          </StyldeBanneRightContainer>
+        </FlexContainer>
+      </StyledBannerWrapper>
     </Container>
   );
 };
