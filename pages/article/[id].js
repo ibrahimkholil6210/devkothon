@@ -41,7 +41,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false, // See the "fallback" section below
+    fallback: true, // See the "fallback" section below
   };
 }
 
@@ -69,5 +69,6 @@ export async function getStaticProps(context) {
       data,
       content,
     },
+    revalidate: 10,
   };
 }
