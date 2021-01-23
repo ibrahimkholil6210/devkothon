@@ -89,7 +89,7 @@ const HeroDetails = (props) => {
           </HeroContentLeftStyled>
           <HeroContentRightStyled>
             <HeroImgContainerStyled>
-              <img src='https://assets.roar.media/assets/XBKfzUVGqsKpvkkV_01-opener-span-am-war.adapt.1900.1.jpg?w=800' />
+              <img src='https://jamstack.org/img/og/default-og-image.png' />
             </HeroImgContainerStyled>
           </HeroContentRightStyled>
         </FlexContainer>

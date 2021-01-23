@@ -76,7 +76,7 @@ const Nav = (props) => {
                   </StyledLink>
                 </StyleList>
                 <StyleList>
-                  <StyledLink href='/articles'>
+                  <StyledLink href='/article'>
                     <FiPenTool />
                     আর্টিকেলস
                   </StyledLink>
