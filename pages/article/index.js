@@ -36,6 +36,5 @@ export async function getStaticProps(ctx) {
     props: {
       data,
     },
-    revalidate: 1,
   };
 }
