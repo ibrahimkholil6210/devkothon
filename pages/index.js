@@ -51,5 +51,6 @@ export async function getStaticProps(ctx) {
     props: {
       pageData: apolloClient.cache.extract(),
     },
+    revalidate: 1,
   };
 }

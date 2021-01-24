@@ -32,10 +32,10 @@ export async function getStaticProps(ctx) {
   const { data } = await apolloClient.query({
     query: articles,
   });
-  console.log(data);
   return {
     props: {
       data,
     },
+    revalidate: 1,
   };
 }
