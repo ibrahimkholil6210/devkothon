@@ -24,7 +24,7 @@ const Post = ({ post }) => {
       <SEO pageData={post.title} />
       <Nav />
       <HeroDetails pageData={post} serial={post.serial} />
-      <ContentContainer details={post.description} />
+      <ContentContainer details={post.description} serial={post.serial} id={post.id} />
       <Footer />
     </>
   );
@@ -61,10 +61,15 @@ export async function getStaticProps({ params }) {
     query($id: ID!) {
       post(id: $id) {
         title
+        id
         description
         createdAt
         serial {
           title
+          posts {
+            title
+            id
+          }
         }
       }
     }

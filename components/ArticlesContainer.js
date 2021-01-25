@@ -6,7 +6,6 @@ import Card from "./Card";
 const ArticleContainerStyled = styled.div`
   background-color: #f9f9f9;
   padding: 25px 0;
-  margin: 50px 0 0 0;
 `;
 
 const StyledTitle = styled.h1``;

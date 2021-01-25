@@ -7,13 +7,13 @@ import SEO from "../../components/utils/SEO";
 import ContentContainer from "../../components/ContentContainer";
 import HeroDetails from "../../components/HeroDetails";
 
-const Article = ({ data, content }) => {
+const Article = ({ data, content, allArticles }) => {
   return (
     <>
       <SEO pageData={data.articel} />
       <Nav />
       <HeroDetails pageData={data.articel} />
-      <ContentContainer details={content} />
+      <ContentContainer details={content} articles={allArticles} />
       <Footer />
     </>
   );
@@ -47,18 +47,22 @@ export async function getStaticPaths() {
 
 export async function getStaticProps(context) {
   const apolloClient = await createApolloClient();
-  const articles = gql`
+  const article = gql`
     query($id: ID!) {
       articel(id: $id) {
         title
         description
         createdAt
       }
+      articels {
+        id
+        title
+      }
     }
   `;
 
   const { data } = await apolloClient.query({
-    query: articles,
+    query: article,
     variables: { id: context.params.id },
   });
 
@@ -68,6 +72,7 @@ export async function getStaticProps(context) {
     props: {
       data,
       content,
+      allArticles: data.articels,
     },
   };
 }

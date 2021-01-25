@@ -1,17 +1,25 @@
 import styled from "styled-components";
 import Container from "./utils/Container";
+import FlexContainer from "./utils/FlexContainer";
+import SuggestionList from "./SuggestionList";
 
-const ContentContainerStyled = styled.div`
-  max-width: 760px;
-  margin: 0 auto;
+const ContentWrapperStyled = styled.div`
+  flex: 1;
 `;
 
-const ContentContainer = ({ details }) => {
+const SuggestationListWrapperStyled = styled.div`
+  width: 30%;
+`;
+
+const ContentContainer = ({ details, serial, id, articles }) => {
   return (
     <Container>
-      <ContentContainerStyled>
-        <div dangerouslySetInnerHTML={{ __html: details }}></div>
-      </ContentContainerStyled>
+      <FlexContainer margin='20px 0'>
+        <ContentWrapperStyled dangerouslySetInnerHTML={{ __html: details }}></ContentWrapperStyled>
+        <SuggestationListWrapperStyled>
+          <SuggestionList serial={serial} id={id} articles={articles} />
+        </SuggestationListWrapperStyled>
+      </FlexContainer>
     </Container>
   );
 };

@@ -1,11 +1,13 @@
 import Link from "next/link";
 import styled from "styled-components";
 
-const StyledLink = ({ children, className, href }) => (
-  <Link href={href} passHref>
-    <a className={className}>{children}</a>
-  </Link>
-);
+const StyledLink = ({ children, className, href }) => {
+  return (
+    <Link href={href} passHref>
+      <a className={className}>{children}</a>
+    </Link>
+  );
+};
 
 export default styled(StyledLink)`
   color: ${(props) => props.theme.colors.primary};

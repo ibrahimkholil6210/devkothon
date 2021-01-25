@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import styled from "styled-components";
-import Link from "next/link";
-import StyledLink from "../components/StyledLink";
+import { FiSearch } from "react-icons/fi";
 
 const InputContainer = styled.div`
   position: relative;
@@ -33,6 +33,7 @@ const InputContainer = styled.div`
     margin-top: 10px;
     cursor: pointer;
   }
+
   & > ul {
     position: relative;
     list-style-type: none;
@@ -53,6 +54,8 @@ const InputContainer = styled.div`
 const Search = (props) => {
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(false);
+  const router = useRouter();
+
   let blurTime;
   const handleBlur = () => {
     blurTime = setTimeout(() => {
@@ -75,14 +78,10 @@ const Search = (props) => {
         onBlur={handleBlur}
         placeholder='আপনি কি খুজছেন?'
       />
-      <button onClick={(e) => props.search(false)}>বন্ধ</button>
-      {active && (
-        <ul>
-          <li>
-            <StyledLink href='/article/demo'>হার্স্ট বনাম পুলিৎজার: সাংবাদিকতার হলুদ অধ্যায়</StyledLink>
-          </li>
-        </ul>
-      )}
+      <button onClick={() => router.push(`/search?q=${query}`)}>
+        <FiSearch />
+      </button>
+      <button onClick={() => props.search(false)}>বন্ধ</button>
     </InputContainer>
   );
 };
