@@ -35,6 +35,9 @@ export async function getStaticProps(ctx) {
         id
         title
         description
+        cover {
+          url
+        }
       }
       serials {
         id

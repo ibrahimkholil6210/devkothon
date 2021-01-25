@@ -81,7 +81,7 @@ const Card = (props) => {
       <Link href={navigationLink(props)}>
         <LinkStyled>
           <CardImgStyled>
-            <ImgStyled src={props.item.mainImg || "https://jamstack.org/img/og/default-og-image.png"} alt={props.item.mainImg} />
+            <ImgStyled src={props.item.cover ? props.item.cover.url : "https://jamstack.org/img/og/default-og-image.png"} alt={props.item.mainImg} />
           </CardImgStyled>
           <CardDescStyled>
             <CardPreData>
