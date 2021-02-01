@@ -6,9 +6,11 @@ const CardStyled = styled.div`
   width: 24%;
   @media screen and (max-width: 768px) {
     width: 100%;
+    margin-bottom: 15px;
   }
   @media screen and (min-width: 769px) and (max-width: 992px) {
     width: 48%;
+    margin-bottom: 15px;
   }
 `;
 

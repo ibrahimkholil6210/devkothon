@@ -16,6 +16,13 @@ const StyldeBannerLeftContainer = styled.div`
   justify-content: center;
   width: 30%;
   flex-wrap: wrap;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+  @media screen and (min-width: 769px) and (max-width: 992px) {
+    width: 100%;
+  }
 `;
 
 const StyldeBanneRightContainer = styled.div`
@@ -23,16 +30,29 @@ const StyldeBanneRightContainer = styled.div`
   justify-content: center;
   flex: 1;
   perspective: 500px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+  @media screen and (min-width: 769px) and (max-width: 992px) {
+    display: none;
+  }
 `;
 
 const StylderHeader = styled.div`
   font-size: 38px;
   font-weight: ${(props) => props.theme.linkSize.lg.fWeight};
   text-transform: uppercase;
+
   @media screen and (max-width: 768px) {
     font-size: 30px;
     font-weight: 700;
   }
+
+  @media screen and (max-width: 467px) {
+    font-size: 24px;
+  }
+
   @media screen and (min-width: 769px) and (max-width: 992px) {
     font-size: 45px;
     font-weight: 700;

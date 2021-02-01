@@ -18,6 +18,14 @@ const StyledUl = styled.ul`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 992px) {
+    justify-content: center;
+  }
 `;
 
 const StyleList = styled.li`

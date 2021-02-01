@@ -8,7 +8,12 @@ const ContentWrapperStyled = styled.div`
 `;
 
 const SuggestationListWrapperStyled = styled.div`
-  width: 30%;
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+  @media screen and (min-width: 769px) and (max-width: 992px) {
+    display: none;
+  }
 `;
 
 const ContentContainer = ({ details, serial, id, articles }) => {

@@ -3,6 +3,16 @@ import Link from "next/link";
 
 const StyledNavBrandText = styled.div`
   width: 30%;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 992px) {
+    width: 100%;
+    text-align: center;
+  }
 `;
 const StyledLink = styled.a`
   text-decoration: none;
