@@ -53,6 +53,9 @@ export async function getStaticProps(context) {
         posts {
           id
           title
+          cover {
+            url
+          }
         }
       }
     }

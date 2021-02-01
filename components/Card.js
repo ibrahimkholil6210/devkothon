@@ -98,7 +98,7 @@ const Card = (props) => {
             <TitleStyled>{props.item.title}</TitleStyled>
           </CardDescStyled>
           <CardBottomStyled>
-            <div> {moment(props.item.createdAt).format("YYYY MMM DD")}</div>
+            <div>{moment(props.item.createdAt).format("YYYY MMM DD")}</div>
             <div>•</div>
             <div>1722 বার পড়া হয়েছে</div>
           </CardBottomStyled>

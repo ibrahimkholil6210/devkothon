@@ -53,6 +53,12 @@ export async function getStaticProps(context) {
         title
         description
         createdAt
+        cover {
+          url
+        }
+        author {
+          username
+        }
       }
       articels {
         id

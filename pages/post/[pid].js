@@ -64,11 +64,17 @@ export async function getStaticProps({ params }) {
         id
         description
         createdAt
+        cover {
+          url
+        }
         serial {
           title
           posts {
             title
             id
+          }
+          author {
+            username
           }
         }
       }

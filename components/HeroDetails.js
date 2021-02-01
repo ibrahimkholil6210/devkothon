@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import moment from "moment";
 import Container from "./utils/Container";
 import FlexContainer from "./utils/FlexContainer";
 
@@ -69,7 +70,7 @@ const HeroDetails = (props) => {
         <FlexContainer alignment={true}>
           <HeroContentLeftStyled>
             <ContentTopStyled>
-              <p>{props.serial ? props.serial.title : "ইতিহাস"}</p>
+              <p>{props.serial ? props.serial.title : "ডেভেলপমেন্ট"}</p>
               <h2>{props.pageData.title}</h2>
             </ContentTopStyled>
             <FlexContainer justify='left' alignment={true}>
@@ -77,10 +78,10 @@ const HeroDetails = (props) => {
                 <img src='https://assets.roar.media/assets/mSTk4ndMbVvsgCuD_28468060_977923829030928_1194532398446516455_n.jpg?w=100' />
               </AuthorImgContainerStyled>
               <ArticleDetailsStyled>
-                <div>Usama Rafid</div>
+                <div>{props.pageData.author?.username || props.serial.author.username}</div>
                 <div>staff writer</div>
                 <FlexContainer>
-                  <div>{"4 Jan 2021"}</div>
+                  <div>{moment(props.pageData.createdAt).format("YYYY MMM DD")}</div>
                   <div>•</div>
                   <div>1722 বার পড়া হয়েছে</div>
                 </FlexContainer>
@@ -89,7 +90,7 @@ const HeroDetails = (props) => {
           </HeroContentLeftStyled>
           <HeroContentRightStyled>
             <HeroImgContainerStyled>
-              <img src='https://jamstack.org/img/og/default-og-image.png' />
+              <img src={props.pageData.cover?.url || "https://jamstack.org/img/og/default-og-image.png"} />
             </HeroImgContainerStyled>
           </HeroContentRightStyled>
         </FlexContainer>
