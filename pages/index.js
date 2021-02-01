@@ -34,7 +34,7 @@ export async function getStaticProps(ctx) {
       articels {
         id
         title
-        description
+        createdAt
         cover {
           url
         }
@@ -43,6 +43,9 @@ export async function getStaticProps(ctx) {
         id
         title
         createdAt
+        cover {
+          url
+        }
       }
     }
   `;

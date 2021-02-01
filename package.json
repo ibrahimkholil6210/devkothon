@@ -9,6 +9,7 @@
   "dependencies": {
     "@apollo/client": "^3.3.7",
     "graphql": "^15.4.0",
+    "moment": "^2.29.1",
     "next": "latest",
     "next-images": "^1.7.0",
     "react": "^17.0.1",

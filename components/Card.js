@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Link from "next/link";
+import moment from "moment";
 
 const CardStyled = styled.div`
   width: 24%;
@@ -85,7 +86,7 @@ const Card = (props) => {
           </CardImgStyled>
           <CardDescStyled>
             <CardPreData>
-              <div>{props.item.category || "ইতিহাস"}</div>
+              <div>{props.item.category || "ডেভেলপমেন্ট"}</div>
               {props.series ? null : (
                 <>
                   <div onClick={handleClick}>
@@ -97,7 +98,7 @@ const Card = (props) => {
             <TitleStyled>{props.item.title}</TitleStyled>
           </CardDescStyled>
           <CardBottomStyled>
-            <div>21 Jan 2021</div>
+            <div> {moment(props.item.createdAt).format("YYYY MMM DD")}</div>
             <div>•</div>
             <div>1722 বার পড়া হয়েছে</div>
           </CardBottomStyled>
