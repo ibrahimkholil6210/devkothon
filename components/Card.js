@@ -88,7 +88,7 @@ const Card = (props) => {
           </CardImgStyled>
           <CardDescStyled>
             <CardPreData>
-              <div>{props.item.category || "ডেভেলপমেন্ট"}</div>
+              {!props.post ? <div>{"লেখক - " + props.item.author?.username}</div> : null}
               {props.series ? null : (
                 <>
                   <div onClick={handleClick}>
@@ -102,7 +102,7 @@ const Card = (props) => {
           <CardBottomStyled>
             <div>{moment(props.item.createdAt).format("YYYY MMM DD")}</div>
             <div>•</div>
-            <div>1722 বার পড়া হয়েছে</div>
+            <div>{props.item.count ? props.item.count : Math.floor(Math.random() * 100)} বার পড়া হয়েছে</div>
           </CardBottomStyled>
         </LinkStyled>
       </Link>

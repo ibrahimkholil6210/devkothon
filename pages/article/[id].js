@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import { gql } from "@apollo/client";
 import markdownToHtml from "../../lib/markdownToHTML";
 import { createApolloClient } from "../../lib/apolloClient";
@@ -8,11 +10,25 @@ import ContentContainer from "../../components/ContentContainer";
 import HeroDetails from "../../components/HeroDetails";
 
 const Article = ({ data, content, allArticles }) => {
+  const [count, setCount] = useState(data.articel.count);
+  const router = useRouter();
+
+  useEffect(async () => {
+    const updateCount = await fetch("/api/updateCount", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ count: data.articel.count, ref: "article", id: router.query.id }),
+    });
+    const parseUpdate = await updateCount.json();
+    setCount(parseUpdate.data.updateArticel.articel.count);
+  }, []);
   return (
     <>
       <SEO pageData={data.articel} />
       <Nav />
-      <HeroDetails pageData={data.articel} />
+      <HeroDetails pageData={data.articel} count={count} />
       <ContentContainer details={content} articles={allArticles} />
       <Footer />
     </>
@@ -53,6 +69,7 @@ export async function getStaticProps(context) {
         title
         description
         createdAt
+        count
         cover {
           url
         }

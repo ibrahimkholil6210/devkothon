@@ -35,8 +35,12 @@ export async function getStaticProps(ctx) {
         id
         title
         createdAt
+        count
         cover {
           url
+        }
+        author {
+          username
         }
       }
       serials {
@@ -45,6 +49,9 @@ export async function getStaticProps(ctx) {
         createdAt
         cover {
           url
+        }
+        author {
+          username
         }
       }
     }

@@ -50,6 +50,9 @@ export async function getStaticProps(context) {
       serial(id: $id) {
         id
         title
+        author {
+          username
+        }
         posts {
           id
           title

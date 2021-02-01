@@ -83,7 +83,7 @@ const HeroDetails = (props) => {
                 <FlexContainer>
                   <div>{moment(props.pageData.createdAt).format("YYYY MMM DD")}</div>
                   <div>•</div>
-                  <div>1722 বার পড়া হয়েছে</div>
+                  <div>{props.count ? props.count : Math.floor(Math.random() * 100)} বার পড়া হয়েছে</div>
                 </FlexContainer>
               </ArticleDetailsStyled>
             </FlexContainer>

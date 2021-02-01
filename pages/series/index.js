@@ -27,6 +27,9 @@ export async function getStaticProps(ctx) {
         id
         title
         createdAt
+        author {
+          username
+        }
         cover {
           url
         }
