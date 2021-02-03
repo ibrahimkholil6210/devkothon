@@ -6,7 +6,20 @@ import SuggestionList from "./SuggestionList";
 const ContentWrapperStyled = styled.div`
   flex: 1;
   & > p {
-    margin: 0;
+    margin: 0 0 10px 0;
+  }
+
+  & > blockquote {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: #edf2ff;
+    font-weight: 400;
+    border-radius: 0.3rem;
+    border-left: 3px solid #5183f5;
+  }
+
+  & > :is(h1, h2, h3, h4, h5, h6) {
+    border-bottom: 2px solid #f1f4f8;
   }
 `;
 
