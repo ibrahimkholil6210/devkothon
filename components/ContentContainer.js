@@ -5,6 +5,9 @@ import SuggestionList from "./SuggestionList";
 
 const ContentWrapperStyled = styled.div`
   flex: 1;
+  & > p {
+    margin: 0;
+  }
 `;
 
 const SuggestationListWrapperStyled = styled.div`
