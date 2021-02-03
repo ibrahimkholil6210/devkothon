@@ -19,7 +19,7 @@ const SeriesContainer = ({ serials, post }) => {
   return (
     <ArticleContainerStyled>
       <Container>
-        <StyledTitle>সিরিজ সূমহ</StyledTitle>
+        <StyledTitle>{post ? "পোস্ট সূমহ" : "সিরিজ সূমহ"}</StyledTitle>
         <FlexContainer>
           {serials.map((item, index) => {
             return <Card item={item} key={index} series post={post} />;
