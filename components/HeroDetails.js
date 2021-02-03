@@ -70,16 +70,16 @@ const HeroDetails = (props) => {
         <FlexContainer alignment={true}>
           <HeroContentLeftStyled>
             <ContentTopStyled>
-              <p>{props.serial ? props.serial.title : "ডেভেলপমেন্ট"}</p>
+              <p>{props.serial ? props.serial.title : props.pageData.tag.title}</p>
               <h2>{props.pageData.title}</h2>
             </ContentTopStyled>
             <FlexContainer justify='left' alignment={true}>
               <AuthorImgContainerStyled>
-                <img src='https://assets.roar.media/assets/mSTk4ndMbVvsgCuD_28468060_977923829030928_1194532398446516455_n.jpg?w=100' />
+                <img src={props.pageData.author.avatar.url} />
               </AuthorImgContainerStyled>
               <ArticleDetailsStyled>
                 <div>{props.pageData.author?.username || props.serial.author.username}</div>
-                <div>staff writer</div>
+                <div>principal writer</div>
                 <FlexContainer>
                   <div>{moment(props.pageData.createdAt).format("YYYY MMM DD")}</div>
                   <div>•</div>

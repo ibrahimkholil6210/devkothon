@@ -70,11 +70,17 @@ export async function getStaticProps(context) {
         description
         createdAt
         count
+        tag {
+          title
+        }
         cover {
           url
         }
         author {
           username
+          avatar {
+            url
+          }
         }
       }
       articels {
