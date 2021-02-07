@@ -17,6 +17,7 @@ const SuggestionListStyle = styled.ul`
 
 const SuggestionSingleListStyled = styled.li`
   font-weight: ${(props) => (props.marksAsCurrent ? "bold" : "normal")};
+  font-size: ${(props) => props.theme.linkSize.lg.fSize};
 `;
 
 const SuggestionList = ({ serial, id, articles }) => {

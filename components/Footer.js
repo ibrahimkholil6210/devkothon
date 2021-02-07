@@ -13,9 +13,7 @@ const FooterGrid = styled.div`
   }
 `;
 
-const ParaStyled = styled.p`
-  font-size: 16px;
-`;
+const ParaStyled = styled.p``;
 
 const FooterGridTitleStyled = styled.div`
   font-size: 30px;
@@ -29,11 +27,11 @@ const ULStyled = styled.ul`
 `;
 
 const MailStyled = styled.a`
-  font-size: 16px;
-  font-weight: 600;
+  font-size: ${({ theme }) => theme.linkSize.lg.fSize};
+  font-weight: ${({ theme }) => theme.linkSize.lg.fWeight};
   text-transform: lowercase;
   cursor: pointer;
-  color: #000;
+  color: ${({ theme }) => theme.colors.primary};
   text-decoration: none;
 `;
 
@@ -41,7 +39,8 @@ const LiStyled = styled.li`
   position: relative;
   & > a {
     text-decoration: none;
-    color: #000;
+    font-size: ${({ theme }) => theme.linkSize.lg.fSize};
+    color: ${({ theme }) => theme.colors.primary};
   }
 `;
 

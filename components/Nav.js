@@ -63,6 +63,11 @@ const StyleList = styled.li`
     outline: none;
     border: 0;
   }
+
+  @media (max-width: 480px) {
+    font-size: ${(props) => props.theme.linkSize.sm.fSize};
+    font-weight: ${(props) => props.theme.linkSize.sm.fWeight};
+  }
 `;
 
 const Nav = (props) => {

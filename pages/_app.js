@@ -9,7 +9,13 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: 'Hind Siliguri', sans-serif;
+    
   }
+  
+  p {
+    font-size: 19px;
+  }
+  
 `;
 
 const theme = {
@@ -27,6 +33,10 @@ const theme = {
     lg: {
       fSize: "18px",
       fWeight: 600,
+    },
+    sm: {
+      fSize: "15px",
+      fWeight: "normal",
     },
   },
   editorColor: {

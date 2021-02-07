@@ -5,8 +5,13 @@ import SuggestionList from "./SuggestionList";
 
 const ContentWrapperStyled = styled.div`
   flex: 1;
+  width: 100%;
   & > p {
     margin: 0 0 10px 0;
+  }
+
+  & > p > img {
+    width: 100%;
   }
 
   & > blockquote {

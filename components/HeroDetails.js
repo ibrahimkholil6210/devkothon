@@ -71,7 +71,7 @@ const HeroDetails = (props) => {
           <HeroContentLeftStyled>
             <ContentTopStyled>
               <p>{props.serial ? props.serial.title : props.pageData.tag.title}</p>
-              <h2>{props.pageData.title}</h2>
+              <h1>{props.pageData.title}</h1>
             </ContentTopStyled>
             <FlexContainer justify='left' alignment={true}>
               <AuthorImgContainerStyled>
