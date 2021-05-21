@@ -5,6 +5,7 @@ import Nav from "../../components/Nav";
 import SeriesContainer from "../../components/SeriesContainer";
 import Footer from ".././../components/Footer";
 
+
 const Posts = (props) => {
   return (
     <>
