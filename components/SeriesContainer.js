@@ -2,14 +2,14 @@ import styled from "styled-components";
 import Container from "./utils/Container";
 import FlexContainer from "./utils/FlexContainer";
 import Card from "./Card";
-import Imgbg from "../assets/img/dark-bg.jpg";
 
 const ArticleContainerStyled = styled.div`
   background-color: #f9f9f9;
   padding: 25px 0;
   margin: 0px 0 50px 0;
   color: ${(props) => props.theme.colors.invert};
-  background-image: url(${Imgbg});
+  background: rgb(0,0,0);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(101,101,101,1) 51%, rgba(0,0,0,1) 100%);
   background-size: cover;
 `;
 
