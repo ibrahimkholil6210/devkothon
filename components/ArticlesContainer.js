@@ -15,7 +15,7 @@ const ArticleContainer = (props) => {
     <ArticleContainerStyled>
       <Container>
         <StyledTitle>আর্টিকেল সূমহ</StyledTitle>
-        <FlexContainer>
+        <FlexContainer justify="start">
           {props.articles.map((item, index) => {
             return <Card item={item} key={index} />;
           })}

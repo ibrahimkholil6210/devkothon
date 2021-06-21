@@ -8,6 +8,7 @@ const StyledFlexContainer = styled.div`
   border-bottom: ${(props) => (props.borderBottom ? "1px solid rgb(242, 242, 247)" : "none")};
   justify-content: ${(props) => (props.justify ? props.justify : "space-between")};
   margin: ${(props) => (props.margin ? props.margin : "0")};
+  gap: 15px;
 `;
 
 const Container = (props) => {
