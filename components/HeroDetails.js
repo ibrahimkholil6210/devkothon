@@ -80,7 +80,7 @@ const HeroDetails = (props) => {
               </AuthorImgContainerStyled>
               <ArticleDetailsStyled>
                 <div>{props.pageData.author?.username || props.serial.author.username}</div>
-                <div>principal writer</div>
+                <div>principal author</div>
                 <FlexContainer>
                   <div>{moment(props.pageData.createdAt).format("YYYY MMM DD")}</div>
                   <div>•</div>
