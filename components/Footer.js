@@ -79,7 +79,7 @@ const Footer = (props) => {
         <FooterGrid>
           <FooterGridTitleStyled>যোগাযোগ</FooterGridTitleStyled>
           <ParaStyled>যেকোন প্রয়োজনে আমাদের কে ই-মেইল করুন বা স্পন্সরশীপের জন্য যোগাযোগ করুন</ParaStyled>
-          <MailStyled href='mailto:contact@devkothon.com'>ibrahimkholil550@gmail.com</MailStyled>
+          <MailStyled href='mailto:ibrahimkholil550@gmail.com'>ibrahimkholil550@gmail.com</MailStyled>
         </FooterGrid>
       </FlexContainer>
     </Container>
