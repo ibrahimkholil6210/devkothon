@@ -51,8 +51,9 @@ const Footer = (props) => {
         <FooterGrid>
           <Logo />
           <ParaStyled>
-            ডেভকথন একটি কম্পিউটার সাইন্সের তথ্য কোষ। কম্পিউটার সাইন্স একটি বিশাল ডিসিপ্লিন। আমাদের চেষ্টা থাকবে বিষয় ভিত্তিক টিউটোরিয়াল এবং প্রতিদিনের
-            যত কাজের যত ভাল খারাপ অভিজ্ঞতা সবার মাঝে ছড়িয়ে দেয়া।
+            ফুলস্ট্যাক টেকনোলজির বিভিন্ন বিষয়ে টিউটোরিয়াল নিজ মাতৃভাষায়। বাংলায়
+            সফটওয়্যার ইঞ্জিনিয়ারিং এর বিভিন্ন বিষয় শিখুন এবং ছড়িয়ে দিন সবার
+            মাঝে।
           </ParaStyled>
           <p>Copyright &copy; 2021 ডেভকথন</p>
         </FooterGrid>
@@ -60,17 +61,17 @@ const Footer = (props) => {
           <FooterGridTitleStyled>কমিউনিটি</FooterGridTitleStyled>
           <ULStyled>
             <LiStyled>
-              <a target='_blank' href='https://js.zonayed.me/'>
+              <a target="_blank" href="https://js.zonayed.me/">
                 হাতে কলমে জাভাস্ক্রিপ্ট
               </a>
             </LiStyled>
             <LiStyled>
-              <a target='_blank' href='https://devsonket.com/'>
+              <a target="_blank" href="https://devsonket.com/">
                 ডেভসংকেত
               </a>
             </LiStyled>
             <LiStyled>
-              <a target='_blank' href='https://techdiary.dev/'>
+              <a target="_blank" href="https://techdiary.dev/">
                 টেকডাইরি
               </a>
             </LiStyled>
@@ -78,8 +79,10 @@ const Footer = (props) => {
         </FooterGrid>
         <FooterGrid>
           <FooterGridTitleStyled>যোগাযোগ</FooterGridTitleStyled>
-          <ParaStyled>যেকোন প্রয়োজনে আমাদের কে ই-মেইল করুন বা স্পন্সরশীপের জন্য যোগাযোগ করুন</ParaStyled>
-          <MailStyled href='mailto:ibrahimkholil550@gmail.com'>ibrahimkholil550@gmail.com</MailStyled>
+          <ParaStyled>যেকোন প্রয়োজনে আমাদের কে ই-মেইল করুন</ParaStyled>
+          <MailStyled href="mailto:ibrahimkholil550@gmail.com">
+            ibrahimkholil550@gmail.com
+          </MailStyled>
         </FooterGrid>
       </FlexContainer>
     </Container>

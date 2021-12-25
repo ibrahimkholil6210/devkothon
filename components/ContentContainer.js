@@ -8,6 +8,7 @@ const ContentWrapperStyled = styled.div`
   width: 100%;
   & > p {
     margin: 0 0 10px 0;
+    font-weight: 300;
   }
 
   & > p > img {
@@ -40,8 +41,10 @@ const SuggestationListWrapperStyled = styled.div`
 const ContentContainer = ({ details, serial, id, articles }) => {
   return (
     <Container>
-      <FlexContainer margin='20px 0'>
-        <ContentWrapperStyled dangerouslySetInnerHTML={{ __html: details }}></ContentWrapperStyled>
+      <FlexContainer margin="20px 0">
+        <ContentWrapperStyled
+          dangerouslySetInnerHTML={{ __html: details }}
+        ></ContentWrapperStyled>
         <SuggestationListWrapperStyled>
           <SuggestionList serial={serial} id={id} articles={articles} />
         </SuggestationListWrapperStyled>

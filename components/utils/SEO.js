@@ -5,20 +5,20 @@ const SEO = (props) => {
     <Head>
       <title>
         {props.title
-          ? props.title + " | ডেভকথন - বাংলায় কম্পিউটার সাইন্সের এর সবচেয়ে তথ্য কোষ"
-          : "ডেভকথন - বাংলায় কম্পিউটার সাইন্সের এর সবচেয়ে তথ্য কোষ"}
+          ? props.title + " | ডেভকথন - বাংলায় ফুলস্ট্যাক টেকনোলজি"
+          : "ডেভকথন - বাংলায় ফুলস্ট্যাক টেকনোলজি"}
       </title>
       <meta
-        name='description'
+        name="description"
         content={
           props.description
             ? props.description
-            : "ডেভকথন একটি কম্পিউটার সাইন্সের তথ্য কোষ। কম্পিউটার সাইন্স একটি বিশাল ডিসিপ্লিন। আমাদের চেষ্টা থাকবে বিষয় ভিত্তিক টিউটোরিয়াল এবং প্রতিদিনের যত কাজের যত ভাল খারাপ অভিজ্ঞতা সবার মাঝে ছড়িয়ে।"
+            : "ফুলস্ট্যাক টেকনোলজির বিভিন্ন বিষয়ে টিউটোরিয়াল নিজ মাতৃভাষায়। বাংলায় সফটওয়্যার ইঞ্জিনিয়ারিং এর বিভিন্ন বিষয় শিখুন এবং ছড়িয়ে দিন সবার মাঝে।"
         }
       />
-      <meta property='og:image' content='/thumbnail.png' />
-      <meta property='og:image:secure_url' content='/thumbnail.png' />
-      <link rel='shortcut icon' href='/fav.png' />
+      <meta property="og:image" content="/thumbnail.png" />
+      <meta property="og:image:secure_url" content="/thumbnail.png" />
+      <link rel="shortcut icon" href="/fav.png" />
     </Head>
   );
 };

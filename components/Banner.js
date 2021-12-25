@@ -65,10 +65,11 @@ const Banner = () => {
       <StyledBannerWrapper>
         <FlexContainer alignment>
           <StyldeBannerLeftContainer>
-            <StylderHeader>বাংলা কম্পিউটার সাইন্স তথ্য কোষ</StylderHeader>
+            <StylderHeader>বাংলায় ফুলস্ট্যাক টেকনোলজি</StylderHeader>
             <p>
-              ডেভকথন একটি কম্পিউটার সাইন্সের তথ্য কোষ। কম্পিউটার সাইন্স একটি বিশাল ডিসিপ্লিন। আমাদের চেষ্টা থাকবে বিষয় ভিত্তিক টিউটোরিয়াল এবং
-              প্রতিদিনের যত কাজের যত ভাল খারাপ অভিজ্ঞতা সবার মাঝে ছড়িয়ে দেয়া।
+              ফুলস্ট্যাক টেকনোলজির বিভিন্ন বিষয়ে টিউটোরিয়াল নিজ মাতৃভাষায়।
+              বাংলায় সফটওয়্যার ইঞ্জিনিয়ারিং এর বিভিন্ন বিষয় শিখুন এবং ছড়িয়ে দিন
+              সবার মাঝে।
             </p>
           </StyldeBannerLeftContainer>
           <StyldeBanneRightContainer>
