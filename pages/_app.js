@@ -9,7 +9,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: 'Hind Siliguri', sans-serif;
-    
   }
   
   p {
