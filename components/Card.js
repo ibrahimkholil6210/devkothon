@@ -67,42 +67,59 @@ const Card = (props) => {
     e.preventDefault();
   };
 
+  const { file, title } = props?.item?.fields?.coverUrl?.fields;
+  const { name, photoUrl } = props?.item?.fields?.author?.fields;
+  const { file: authorFile } = photoUrl?.fields;
+
   const navigationLink = (itemDef) => {
     let navLink = null;
-    if (itemDef.series && itemDef.post) {
-      navLink = "/post/" + itemDef.item.id;
-    } else if (itemDef.series) {
-      navLink = "/series/" + itemDef.item.id;
-    } else {
-      navLink = "/article/" + itemDef.item.id;
+    const { id } = itemDef?.sys?.contentType?.sys;
+    if (id === "articles") {
+      navLink = "/article/" + itemDef?.sys?.id;
+    }else if(id === 'series'){
+      navLink = "/article/" + itemDef?.sys?.id;
     }
     return navLink;
   };
 
   return (
     <CardStyled>
-      <Link href={navigationLink(props)}>
+      <Link href={navigationLink(props.item)}>
         <LinkStyled>
           <CardImgStyled>
-            <ImgStyled src={props.item.cover ? props.item.cover.url : "https://jamstack.org/img/og/default-og-image.png"} alt={props.item.mainImg} />
+            <ImgStyled
+              src={
+                file?.url
+                  ? file?.url
+                  : "https://jamstack.org/img/og/default-og-image.png"
+              }
+              alt={title}
+            />
           </CardImgStyled>
           <CardDescStyled>
             <CardPreData>
-              {!props.post ? <div>{"লেখক - " + props.item.author?.username}</div> : null}
+              {!props.post ? <div>{"লেখক - " + name}</div> : null}
               {props.series ? null : (
                 <>
                   <div onClick={handleClick}>
-                    <img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE1IDE4Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggc3Ryb2tlPSIjMDAwIiBkPSJNLjUgMTMuN2w3IDMuNzMzIDctMy43MzNWM0EyLjUgMi41IDAgMCAwIDEyIC41SDNBMi41IDIuNSAwIDAgMCAuNSAzdjEwLjd6Ii8+CiAgICAgICAgPHBhdGggZmlsbD0iIzAwMCIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNNi45IDEyLjFWOC42OTVIMy41VjcuNTAxaDMuNHYtMy40aDEuMTk1djMuNEgxMS41djEuMTk0SDguMDk1VjEyLjF6Ii8+CiAgICA8L2c+Cjwvc3ZnPgo=' />
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNSIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDE1IDE4Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggc3Ryb2tlPSIjMDAwIiBkPSJNLjUgMTMuN2w3IDMuNzMzIDctMy43MzNWM0EyLjUgMi41IDAgMCAwIDEyIC41SDNBMi41IDIuNSAwIDAgMCAuNSAzdjEwLjd6Ii8+CiAgICAgICAgPHBhdGggZmlsbD0iIzAwMCIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNNi45IDEyLjFWOC42OTVIMy41VjcuNTAxaDMuNHYtMy40aDEuMTk1djMuNEgxMS41djEuMTk0SDguMDk1VjEyLjF6Ii8+CiAgICA8L2c+Cjwvc3ZnPgo=" />
                   </div>
                 </>
               )}
             </CardPreData>
-            <TitleStyled>{props.item.title}</TitleStyled>
+            <TitleStyled>{title}</TitleStyled>
           </CardDescStyled>
           <CardBottomStyled>
-            <div>{moment(props.item.createdAt).format("YYYY MMM DD")}</div>
+            <div>
+              {moment(props?.item?.sys?.createdAt).format("YYYY MMM DD")}
+            </div>
             <div>•</div>
-            <div>{props.item.count ? props.item.count : Math.floor(Math.random() * 100)} বার পড়া হয়েছে</div>
+            <div>
+              {props.item.count
+                ? props.item.count
+                : Math.floor(Math.random() * 100)}{" "}
+              বার পড়া হয়েছে
+            </div>
           </CardBottomStyled>
         </LinkStyled>
       </Link>

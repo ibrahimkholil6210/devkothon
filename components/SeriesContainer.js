@@ -15,13 +15,13 @@ const ArticleContainerStyled = styled.div`
 
 const StyledTitle = styled.h1``;
 
-const SeriesContainer = ({ serials, post }) => {
+const SeriesContainer = ({ series, post }) => {
   return (
     <ArticleContainerStyled>
       <Container>
         <StyledTitle>{post ? "পোস্ট সূমহ" : "সিরিজ সূমহ"}</StyledTitle>
         <FlexContainer>
-          {serials.map((item, index) => {
+          {series.items.map((item, index) => {
             return <Card item={item} key={index} series post={post} />;
           })}
         </FlexContainer>
